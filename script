@@ -1,0 +1,94 @@
+#!/bin/bash
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+PURPLE='\033[0;35m'
+NC='\033[0m'
+
+echo 'Do you want to test valid or invalid maps?'
+read map
+
+if [ $map == 'invalid' ]
+then
+	echo -e "${GREEN}testing $map maps${NC}"
+	files=./invalid_maps/*
+
+	for file in $files
+	do
+		output="$(./lem-in < "$file" > /dev/null 2>&1 | wc -l)"
+		if [ $output -le 1 ]
+		then
+			printf "${PURPLE}%-30s${NC} ${GREEN}[passed]${NC}\n" $(basename $file)
+		else
+			printf "${PURPLE}%-30s${NC}	${RED}[failed]${NC}\n" $(basename $file)
+		fi
+	done
+fi  
+
+if [ $map == 'valid' ]
+then
+	files=./valid_maps/flow-one*
+	cnt=0
+	
+	start="$(date +%s)"
+	for file in $files
+	do
+		mkdir -p results
+		res="$(./lem-in < "$file" > ./results/$(basename $file))"
+		cnt=$((cnt+1))
+	done
+	end="$(date +%s)"
+	printf "average speed with flow-one is %-10.10f\n" $(((end - start) / cnt))
+
+	files=./valid_maps/flow-ten*
+	cnt=0
+	
+	start="$(date +%s)"
+	for file in $files
+	do
+		mkdir -p results
+		res="$(./lem-in < "$file" > ./results/$(basename $file))"
+		cnt=$((cnt+1))
+	done
+	end="$(date +%s)"
+	printf "average speed with flow-ten is %-10.10f\n" $(((end - start) / cnt))
+
+	files=./valid_maps/flow-thousand*
+	cnt=0
+	
+	start="$(date +%s)"
+	for file in $files
+	do
+		mkdir -p results
+		res="$(./lem-in < "$file" > ./results/$(basename $file))"
+		cnt=$((cnt+1))
+	done
+	end="$(date +%s)"
+	printf "average speed with flow-thousand is %-10.10f\n" $(((end - start) / cnt))
+
+	files=./valid_maps/big?
+	cnt=0
+	
+	start="$(date +%s)"
+	for file in $files
+	do
+		mkdir -p results
+		res="$(./lem-in < "$file" > ./results/$(basename $file))"
+		cnt=$((cnt+1))
+	done
+	end="$(date +%s)"
+	printf "average speed with big is %-10.10f\n" $(((end - start) / cnt))
+
+	files=./valid_maps/big-super*
+	cnt=0
+	
+	start="$(date +%s)"
+	for file in $files
+	do
+		mkdir -p results
+		res="$(./lem-in < "$file" > ./results/$(basename $file))"
+		cnt=$((cnt+1))
+	done
+	end="$(date +%s)"
+	printf "average speed with big-super is %-10.10f\n" $(((end - start) / cnt))
+fi
