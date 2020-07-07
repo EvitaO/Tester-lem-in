@@ -33,3 +33,5 @@ $ ./script
 8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you chose to run it with 'all', it runs step 4 till 7 for each category.
 
 ## Example of the result
+
+(https://github.com/EvitaO/Tester-lem-in/blob/master/example_results.png)
