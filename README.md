@@ -21,7 +21,7 @@ $ ./script
 
 4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The maps will be generated and saved in a directory with the name of the category.
 
-5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It runs your lem-in with those maps and will first print the average time it takes your lem-in to execute the maps of the specified category. The results  will be saved in a directory with 'name of the category'-results.
+5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It runs your lem-in with those maps and will first print the average time it takes your lem-in to execute the maps of the specified category.<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The results  will be saved in a directory with 'name of the category'-results.
 
 6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Then it will print: the name of the map, the number of lines required, how many lines your lem-in used and<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if you passed(equal or less then lines required) or failed(more than required lines).
 
