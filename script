@@ -12,10 +12,11 @@ if [ $map = 'invalid' ]
 then
 	echo -e "${GREEN}testing $map maps${NC}"
 	files=./invalid_maps/*
-
+	touch ./error
 	for file in $files
 	do
-		output="$(./lem-in < "$file" > /dev/null 2>&1 | wc -l)"
+		./lem-in < "$file" > ./error 2>&1
+		output=$(< ./error wc -l)
 		if [ $output -le 1 ]
 		then
 			printf "${PURPLE}%-30s${NC} ${GREEN}[passed]${NC}\n" $(basename $file)
@@ -23,6 +24,7 @@ then
 			printf "${PURPLE}%-30s${NC}	${RED}[failed]${NC}\n" $(basename $file)
 		fi
 	done
+	rm ./error
 elif [ $map = 'valid' ]
 then
 	echo "do you want to test lem-in with: flow-one, flow-ten, flow-thousand, big, big-super or all?"
