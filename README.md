@@ -4,7 +4,7 @@ This is a script to test your lem-in on valid and invalid maps. Works on Linux a
 
 ## Prerequisites
 
-Put your lem-in executable in this folder. If you want to use it on MacOS, change in make_maps './linux_gen' to './generator'.
+Put your lem-in executable in this folder. If you want to use it on MacOS, command in make_maps the lines with './linux_gen' and uncommand the lines with './generator'. Also in the files flow-b, flow-bs, flow-o, flow-t, flow-th you have to change the values of the variables 'start' and 'end' to the values that are commanded. For MacOS time doesn't work yet.
 
 ## Usage
 
