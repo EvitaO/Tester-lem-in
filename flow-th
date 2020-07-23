@@ -6,6 +6,8 @@ PURPLE='\033[0;35m'
 NC='\033[0m'
 
 files=./flow-thousand/*
+#for macOS uncommand line 10 and command line 11
+#start="$(date +'%s * 1000 + %-N / 1000000')"
 start="$(date +%s%N)"
 cnt=0
 for file in $files
@@ -14,6 +16,8 @@ do
 	output="$(./lem-in < "$file" > ./flow-thousand-results/$(basename $file))"
 	cnt=$((cnt+1))
 done
+#for macOS uncommand line 20 and command line 21
+#end="$(date +'%s * 1000 + %-N / 1000000')"
 end="$(date +%s%N)"
 
 av_time="$(((end - start) / 1000000000))"

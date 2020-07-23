@@ -7,6 +7,8 @@ then
 	do
 		filename="flow-one${cnt}"
 		mkdir -p flow-one
+		#for macOS uncommand line 11 and command line 12
+		#res="$(./generator --flow-one > ./flow-one/$filename)"
 		res="$(./linux_gen --flow-one > ./flow-one/$filename)"
 		cnt=$((cnt+1))
 	done
@@ -17,6 +19,8 @@ then
 	do
 		filename="flow-ten${cnt}"
 		mkdir -p flow-ten
+		#for macOS uncommand line 23 and command line 24
+		#res="$(./generator --flow-ten > ./flow-ten/$filename)"
 		res="$(./linux_gen --flow-ten > ./flow-ten/$filename)"
 		cnt=$((cnt+1))
 	done
@@ -27,6 +31,8 @@ then
 	do
 		filename="flow-thousand${cnt}"
 		mkdir -p flow-thousand
+		#for macOS uncommand line 35 and command line 36
+		#res="$(./generator --flow-thousand > ./flow-thousand/$filename)"
 		res="$(./linux_gen --flow-thousand > ./flow-thousand/$filename)"
 		cnt=$((cnt+1))
 	done
@@ -37,6 +43,8 @@ then
 	do
 		filename="big${cnt}"
 		mkdir -p big
+		#for macOS uncommand line 47 and command line 48
+		#res="$(./generator --big > ./big/$filename)"
 		res="$(./linux_gen --big > ./big/$filename)"
 		cnt=$((cnt+1))
 	done
@@ -47,6 +55,8 @@ then
 	do
 		filename="big-super${cnt}"
 		mkdir -p big-super
+		#for macOS uncommand line 59 and command line 60
+		#res="$(./generator --big-superposition > ./big-super/$filename)"
 		res="$(./linux_gen --big-superposition > ./big-super/$filename)"
 		cnt=$((cnt+1))
 	done
